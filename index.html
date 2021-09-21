@@ -25,6 +25,7 @@ class ConnectionPrototype {
         contClone.edad = this.proto.edad;
         contClone.genero = this.proto.genero;
         contClone.ocupacion = this.proto.ocupacion;
+        contClone.state = this.proto.state;
 
         return contClone;
     }
@@ -34,49 +35,31 @@ class ConnectionPrototype {
 
 class Connection {
 
-    constructor(nombre, apellido, edad, genero, ocupacion){
+    constructor(nombre, apellido, edad, genero, ocupacion,state){
         this.nombre =nombre;  
         this.apellido =apellido;
         this.edad =edad;
         this.genero =genero;
         this.ocupacion =ocupacion;
+        this.state = state;
     }
 
 }
-
-//OBJETO PRIMARIO QUE SE USARA COMO PROTOTIPO
-
-
-let ConnectionPrimary =
-    new Connection("Juan", "Diaz", "18", "Hombre", "Estudiante");
-
-//OBJETO CLONADO DEL PROTOTIPO
-
-let ConnectionSecundary =
-    new ConnectionPrototype(ConnectionPrimary)
-
-//IMPRESIONES
-
-console.log(ConnectionPrimary);
-console.log(ConnectionSecundary);
-
-
-//IGNORAR POR AHORA, SOLO SE TOMARA EN CUENTA LO DE ARRIBA
-
+//*********************************************
+//ESTA ES LA BASE USADA PARA DESARROLLAR TODO
 /*
-var opt 
+        //OBJETO PRIMARIO QUE SE USARA COMO PROTOTIPO
+  let ConnectionPrimary = new Connection("Juan", "Diaz", "18", "Hombre", "Estudiante","1");
+        //OBJETO CLONADO DEL PROTOTIPO
+  let ConnectionSecundary = new ConnectionPrototype(ConnectionPrimary);
+*/
+//*********************************************
 
-for (opt = 0; opt != 4;) {
+let ArrayP =[]
+let ArrayS =[]
 
-    let ConnectionPrimary =
-    new Connection("Juan", "Diaz", "18", "Hombre", "Estudiante");
-
-    opt = prompt('Select a case','')
-
-switch (opt){
-
-    //Case 1: Escribir el objeto y agregarlo a una lista.
-    case "1":
+//PRIMARY
+for (i= 0; i < 2; i++){
 
     nombre = prompt('Write a name','');
     apellido = prompt('Write a last name','');
@@ -84,34 +67,41 @@ switch (opt){
     genero = prompt('Write a gender','');
     ocupacion = prompt('Write a job','');
 
-    let ConnectionPrimary =
-    new Connection(nombre, apellido, edad, genero, ocupacion);
+    let ConnectionPrimary = 
+    new Connection(nombre, apellido, edad, genero, ocupacion, "1");
 
-    break;
-
-    //Case 2: Agregar la lista a una lista de prototypes
-    case "2":
-
-    console.log("Como estas?")
-
-    break;
-
-    //Case 3: Mostrar la lista de objetos y de prototypes
-    case "3":
-
-    console.log(ConnectionPrimary);
-    //console.log(ConnectionSecundary);
-
-    break;
-
-    case 4:
-        console.log("Good bye");
-    break;
+    ArrayP.push(ConnectionPrimary);
 
 }
 
+//SECUNDARY
+for (i= 0; i < ArrayP.length; i++){
+    
+    let ConnectionSecundary = 
+    new ConnectionPrototype(ArrayP[i])
+
+    ConnectionSecundary.state = "2";
+
+    ArrayS.push(ConnectionSecundary);
 }
-*/
+ 
+
+//IMPRESIONES
+
+//console.log(ConnectionPrimary);
+//console.log(ConnectionSecundary);
+
+for (i=0; i< ArrayP.length;i++){
+
+console.log(ArrayP[i]);
+
+}
+
+for (i=0; i< ArrayS.length;i++){
+
+console.log(ArrayS[i]);
+
+}
 
     </script>
 </html>
