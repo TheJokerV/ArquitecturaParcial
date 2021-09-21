@@ -1,0 +1,12 @@
+//COMO CORRER EL PROGRAMA INDEX.HTML
+
+En este programa se uso el sistema Visual Studio Code, recomendable usarlo o usar algun otro programa
+editor de texto que pueda correr aplicaciones HTML o JavaScrypt.
+
+1. Al entrar a Visual Studio Code seleccionar File/Open Folder.
+2. Seleccionar la carpeta en la que viene el File index.HTML.
+3. Entrar a la carpeta y abrir el index.HTML con el navegador de su preferencia.
+4. Dentro del navegador abrir el modo desarrollador o Herramientas de desarrollo (CTRL + SHIT + I en mi caso).
+5. En caso de ser necesario reiniciar con F5 la pagina
+6. Empezar a agregar datos como te lo pidan, en el File abierto puedes revisar el codigo y cambiar tanto
+   La cantidad de prototipos como de clones haya que mostrarse.
