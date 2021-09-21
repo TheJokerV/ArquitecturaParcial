@@ -25,6 +25,7 @@ class ConnectionPrototype {
         contClone.edad = this.proto.edad;
         contClone.genero = this.proto.genero;
         contClone.ocupacion = this.proto.ocupacion;
+
         contClone.state = this.proto.state;
 
         return contClone;
@@ -41,6 +42,8 @@ class Connection {
         this.edad =edad;
         this.genero =genero;
         this.ocupacion =ocupacion;
+
+        //EL STATE INDICA SI ES 1: UN PROTOTIPO; 2: UN CLON
         this.state = state;
     }
 
@@ -58,8 +61,12 @@ class Connection {
 let ArrayP =[]
 let ArrayS =[]
 
+
+//CAMBIAR LA X REPRESENTA CUANTOS PROTOTIPOS Y CLONES SE CREARAN
+var x = 2;
+
 //PRIMARY
-for (i= 0; i < 2; i++){
+for (i= 0; i < x; i++){
 
     nombre = prompt('Write a name','');
     apellido = prompt('Write a last name','');
