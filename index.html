@@ -46,6 +46,7 @@ class Connection {
 
 //OBJETO PRIMARIO QUE SE USARA COMO PROTOTIPO
 
+
 let ConnectionPrimary =
     new Connection("Juan", "Diaz", "18", "Hombre", "Estudiante");
 
@@ -58,6 +59,59 @@ let ConnectionSecundary =
 
 console.log(ConnectionPrimary);
 console.log(ConnectionSecundary);
+
+
+//IGNORAR POR AHORA, SOLO SE TOMARA EN CUENTA LO DE ARRIBA
+
+/*
+var opt 
+
+for (opt = 0; opt != 4;) {
+
+    let ConnectionPrimary =
+    new Connection("Juan", "Diaz", "18", "Hombre", "Estudiante");
+
+    opt = prompt('Select a case','')
+
+switch (opt){
+
+    //Case 1: Escribir el objeto y agregarlo a una lista.
+    case "1":
+
+    nombre = prompt('Write a name','');
+    apellido = prompt('Write a last name','');
+    edad = prompt('Write a age','');
+    genero = prompt('Write a gender','');
+    ocupacion = prompt('Write a job','');
+
+    let ConnectionPrimary =
+    new Connection(nombre, apellido, edad, genero, ocupacion);
+
+    break;
+
+    //Case 2: Agregar la lista a una lista de prototypes
+    case "2":
+
+    console.log("Como estas?")
+
+    break;
+
+    //Case 3: Mostrar la lista de objetos y de prototypes
+    case "3":
+
+    console.log(ConnectionPrimary);
+    //console.log(ConnectionSecundary);
+
+    break;
+
+    case 4:
+        console.log("Good bye");
+    break;
+
+}
+
+}
+*/
 
     </script>
 </html>
