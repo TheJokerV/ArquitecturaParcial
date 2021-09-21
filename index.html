@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title> Prototype </title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+
+class ConnectionPrototype {
+    constructor(proto){
+        this.proto = proto;
+        return this.clone();
+    }
+    
+    clone(){
+        let contClone = new Connection();
+        contClone.nombre = this.proto.nombre;
+        contClone.apellido = this.proto.apellido;
+        contClone.edad = this.proto.edad;
+        contClone.genero = this.proto.genero;
+        contClone.ocupacion = this.proto.ocupacion;
+
+        return contClone;
+    }
+}
+
+//CLASE USADA PARA CREAR EL PROTOTIPO
+
+class Connection {
+
+    constructor(nombre, apellido, edad, genero, ocupacion){
+        this.nombre =nombre;  
+        this.apellido =apellido;
+        this.edad =edad;
+        this.genero =genero;
+        this.ocupacion =ocupacion;
+    }
+
+}
+
+//OBJETO PRIMARIO QUE SE USARA COMO PROTOTIPO
+
+let ConnectionPrimary =
+    new Connection("Juan", "Diaz", "18", "Hombre", "Estudiante");
+
+//OBJETO CLONADO DEL PROTOTIPO
+
+let ConnectionSecundary =
+    new ConnectionPrototype(ConnectionPrimary)
+
+//IMPRESIONES
+
+console.log(ConnectionPrimary);
+console.log(ConnectionSecundary);
+
+    </script>
+</html>
