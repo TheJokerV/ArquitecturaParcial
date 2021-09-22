@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title> Prototype </title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+
+class ConnectionPrototype {
+    constructor(proto){
+        this.proto = proto;
+        return this.clone();
+    }
+    
+    clone(){
+        let contClone = new Connection();
+        contClone.nombre = this.proto.nombre;
+        contClone.apellido = this.proto.apellido;
+        contClone.edad = this.proto.edad;
+        contClone.genero = this.proto.genero;
+        contClone.ocupacion = this.proto.ocupacion;
+
+        contClone.state = this.proto.state;
+
+        return contClone;
+    }
+}
+
+//CLASE USADA PARA CREAR EL PROTOTIPO
+
+class Connection {
+
+    constructor(nombre, apellido, edad, genero, ocupacion,state){
+        this.nombre =nombre;  
+        this.apellido =apellido;
+        this.edad =edad;
+        this.genero =genero;
+        this.ocupacion =ocupacion;
+
+        //EL STATE INDICA SI ES 1: UN PROTOTIPO; 2: UN CLON
+        this.state = state;
+    }
+
+}
+//*********************************************
+//ESTA ES LA BASE USADA PARA DESARROLLAR TODO
+/*
+        //OBJETO PRIMARIO QUE SE USARA COMO PROTOTIPO
+  let ConnectionPrimary = new Connection("Juan", "Diaz", "18", "Hombre", "Estudiante","1");
+        //OBJETO CLONADO DEL PROTOTIPO
+  let ConnectionSecundary = new ConnectionPrototype(ConnectionPrimary);
+*/
+//*********************************************
+
+let ArrayP =[]
+let ArrayS =[]
+
+
+//CAMBIAR LA X REPRESENTA CUANTOS PROTOTIPOS Y CLONES SE CREARAN
+var x = 2;
+
+//PRIMARY
+for (i= 0; i < x; i++){
+
+    nombre = prompt('Write a name','');
+    apellido = prompt('Write a last name','');
+    edad = prompt('Write a age','');
+    genero = prompt('Write a gender','');
+    ocupacion = prompt('Write a job','');
+
+    let ConnectionPrimary = 
+    new Connection(nombre, apellido, edad, genero, ocupacion, "1");
+
+    ArrayP.push(ConnectionPrimary);
+
+}
+
+//SECUNDARY
+for (i= 0; i < ArrayP.length; i++){
+    
+    let ConnectionSecundary = 
+    new ConnectionPrototype(ArrayP[i])
+
+    ConnectionSecundary.state = "2";
+
+    ArrayS.push(ConnectionSecundary);
+}
+ 
+
+//IMPRESIONES
+
+//console.log(ConnectionPrimary);
+//console.log(ConnectionSecundary);
+
+for (i=0; i< ArrayP.length;i++){
+
+console.log(ArrayP[i]);
+
+}
+
+for (i=0; i< ArrayS.length;i++){
+
+console.log(ArrayS[i]);
+
+}
+
+    </script>
+</html>
